@@ -1,10 +1,11 @@
 import express, { Application, Request, Response, NextFunction } from 'express';
-import Person from './models/person';
+import BedroomTV from './models/bedroomTV';
+import Microwave from './models/microwave';
 
 const app: express.Application = express();
 
-let person = new Person("world");
-console.log(person.name);
+let microwave = new Microwave();
+microwave.turnOnOff()
 
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
     res.send('hello');
